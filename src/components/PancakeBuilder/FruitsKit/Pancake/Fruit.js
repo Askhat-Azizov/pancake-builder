@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from "./Fruit.module.css";
+import clases from "./Fruit.module.css";
 
 export default function() {
     return (
