@@ -1,10 +1,15 @@
 import React from 'react';
 import './App.css';
+import Layout from './components/Layout/Layout';
+import PancakeBuilder from './Conteiners/PancakeBuilder/PancakeBuilder';
 
 function App() {
   return (
     <div className="App">
-      Pancake Builder by Askhat Azizov!
+      <Layout>
+         <PancakeBuilder/>
+      </Layout>
+      
     </div>
   );
 }
