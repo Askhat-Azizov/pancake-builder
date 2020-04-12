@@ -1,18 +1,19 @@
-import React from 'react';
+import React from "react";
 import classes from "./FruitsKit.module.css";
 import Fruit from "./Pancake/Fruit";
 
-export default function({ fruit }) {
-    let fruitOutput = [];
+export default function ({ price, fruit }) {
+  let fruitOutput = [];
 
-    Object.keys(fruit).forEach(type => {
-        for (let i = 0; i < fruit[type]; i++) {
-            fruitOutput.push(<Fruit key={type + i} type={type} />);
-        }
-    })
-    return (
-       <div className={classes.FruitsKit}>
-           {fruitOutput}
-       </div>
-    );
+  Object.keys(fruit).forEach((type) => {
+    for (let i = 0; i < fruit[type]; i++) {
+      fruitOutput.push(<Fruit key={type + i} type={type} />);
+    }
+  });
+  return (
+    <div className={classes.FruitsKit}>
+      <div className={classes.bento}>{fruitOutput}</div>
+      <div className={classes.price}>Total price:{price} som</div>
+    </div>
+  );
 }
