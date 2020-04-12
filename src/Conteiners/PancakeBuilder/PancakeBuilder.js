@@ -39,7 +39,11 @@ export default function () {
   return (
     <div className={classes.PancakeBuilder}>
       <FruitsKit price={price} fruit={fruit} />
-      <FruitsControls addFruit={addFruit} removeFruit={removeFruit} />
+      <FruitsControls
+        addFruit={addFruit}
+        removeFruit={removeFruit}
+        fruit={fruit}
+      />
     </div>
   );
 }
