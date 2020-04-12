@@ -1,12 +1,23 @@
 import React from 'react';
 import classes from "./Fruit.module.css";
 
-export default function() {
+export default function({type}) {
+   const fruitClasses = [classes.Fruit];
+
+   switch (type) {
+      case 'banana':
+         fruitClasses.push(classes.Banana);
+         break;
+      case 'strawberry':
+         fruitClasses.push(classes.Strawberry);
+         break;   
+      case 'kiwi':
+         fruitClasses.push(classes.Kiwi);
+         break;     
+   }
+
     return (
-       <div className={classes.Fruit} >
-          <div className={classes.Strawberry}></div>
-          <div className={classes.Fruit}></div>
-          <div className={classes.Kiwi}></div>
+       <div className={fruitClasses.join(' ')} >
        </div>
     );
 }
