@@ -4,4 +4,8 @@
     background-color: darkcyan;
     width: 300px;
     height: 300px   ;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }

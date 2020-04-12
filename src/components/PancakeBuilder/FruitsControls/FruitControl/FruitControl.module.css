@@ -1,0 +1,11 @@
+.FruitControl{
+    margin-bottom: 0.5rem;
+}
+.FruitControl .label{
+    color: wheat;
+}
+.FruitControl button {
+    border: 1px solid greenyellow;
+    background-color: rgb(69, 107, 32);
+    color: wheat;
+}
