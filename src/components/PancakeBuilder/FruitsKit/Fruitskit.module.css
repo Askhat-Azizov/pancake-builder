@@ -1,6 +1,7 @@
 .FruitsKit{
-    border: 3px solid red;
-    background-color: darkcyan;
-    width: 300px;
-    height: 300px   ;
+    border: 3px solid #AB6011;
+    background-color: #E6A154;
+    width: 400px;
+    height: 400px   ;
+    border-radius: 50%;
 }
