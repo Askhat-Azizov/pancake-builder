@@ -1,0 +1,9 @@
+.Sidebar {
+  display: flex;
+  align-items: center;
+}
+.Sidebar span {
+  font-family: "Nanum Brush Script", cursive;
+  color: white;
+  font-size: 2rem;
+}

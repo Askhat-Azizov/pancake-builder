@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
+import classes from "./Sidebar.module.css";
 
-export default function({children}) {
-    return (
-       <div className="Sidebar">Sidebar</div>
-    );
-}
+export default () => (
+  <div className={classes.Sidebar}>
+    <span>Pancake Builder</span>
+  </div>
+);

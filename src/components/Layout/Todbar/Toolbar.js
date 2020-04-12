@@ -1,7 +1,11 @@
 import React from 'react';
+import classes from './Toolbar.module.css';
+import Nav from './Nav/Nav';
+import Sidebar from '../Sidebar/Sidebar';
 
-export default function({children}) {
-    return (
-       <div className="Toolbar">Toolbar</div>
-    );
-}
+export default () =>  (
+  <div className={classes.Toolbar}>
+    <Sidebar />
+    <Nav />
+  </div>
+);
