@@ -11,7 +11,7 @@ export default function ({ price, fruit }) {
     }
   });
   return (
-    <div className={classes.FruitsKit}>
+    <div className={classes.Fruitskit}>
       <div className={classes.bento}>{fruitOutput}</div>
       <div className={classes.price}>Total price:{price} som</div>
     </div>
