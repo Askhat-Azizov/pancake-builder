@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./FruitsKit.module.css";
+import classes from "./Fruitskit.module.css";
 import Fruit from "./Pancake/Fruit";
 
 export default function ({ price, fruit }) {
