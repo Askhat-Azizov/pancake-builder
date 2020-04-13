@@ -4,11 +4,12 @@
 }
 .Sidebar img {
   margin: 5px;
-  height: 40px;
-  width: 40px;
+  padding-bottom: 15px;
+  height: 60px;
+  width: 60px;
 }
 .Sidebar span {
-  font-family: 'Nanum Brush Script', cursive;
+  font-family: 'Pacifico', cursive;
   color: white;
   font-size: 2rem;
 }
