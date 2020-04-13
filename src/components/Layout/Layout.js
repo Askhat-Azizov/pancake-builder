@@ -6,7 +6,6 @@ import classes from "./Layout.module.css";
 export default function({ children }) {
     return (
        <div className="Layout">
-           <Sidebar/>
            <Toolbar/>
            {children}
        </div>
