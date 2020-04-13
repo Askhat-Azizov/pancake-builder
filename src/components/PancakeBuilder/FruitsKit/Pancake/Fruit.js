@@ -4,6 +4,20 @@ import classes from "./Fruit.module.css";
 export default function ({ type }) {
   const fruitClasses = [classes.Fruit];
 
+  let style = null;
+  const getPosition = (ir) => {
+    const pd = 300;
+    const pr = pd / 2;
+
+    const ix = Math.round(Math.random() * pd);
+    const iy = Math.round(Math.random() * pd);
+
+    const distance =
+      Math.sqrt(Math.pow(ix - pr, 2) + Math.pow(iy - pr, 2)) + ir;
+
+    return distance < pr ? { x: ix - ir, y: iy - ir } : getPosition(ir);
+  };
+
   switch (type) {
     case "banana":
       fruitClasses.push(classes.Banana);
@@ -19,5 +33,13 @@ export default function ({ type }) {
       break;
   }
 
-  return <div className={fruitClasses.join(" ")}></div>;
+   const position = getPosition(50 / 2);
+
+  style= {
+    position: "absolute",
+    top: position.y + "px",
+    left: position.x + "px",
+  };
+
+  return <div  style={style} className={fruitClasses.join(" ")}></div>;
 }

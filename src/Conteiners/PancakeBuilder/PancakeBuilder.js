@@ -11,10 +11,10 @@ const PRICES = {
 
 export default function () {
   const [fruit, setfruit] = useState({
-    banana: 3,
-    strawberry: 2,
-    kiwi: 3,
-    chocolate: 2,
+    banana: 0,
+    strawberry: 0,
+    kiwi: 0,
+    chocolate: 0,
   });
 
   const [price, setPrice] = useState(40);
