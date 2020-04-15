@@ -1,3 +1,9 @@
+.Fruit{
+   position: absolute;
+   top: 0px;
+   left: 0px;
+
+}
 .Banana{
    background-image: url(../../../../assets/banana.png);
 }

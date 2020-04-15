@@ -1,10 +1,11 @@
 .Fruitskit .bento{
     padding: 1rem;
     padding-top: 2rem;
+    position: relative;
     
-    background-image: url(../../../assets/pancake.jpg);
-    width: 500px;
-    height: 530px;
+    background:orangered;
+    width: 550px;
+    height: 550px;
     border-radius: 50%;
   
     display: flex;

@@ -2,11 +2,11 @@ import React from "react";
 import classes from "./Fruit.module.css";
 
 export default function ({ type }) {
-  const fruitClasses = [classes.Fruit];
+  const fruitClasses = [classes.Fruit, classes[type]];
 
   let style = null;
   const getPosition = (ir) => {
-    const pd = 300;
+    const pd = 550;
     const pr = pd / 2;
 
     const ix = Math.round(Math.random() * pd);
@@ -18,7 +18,7 @@ export default function ({ type }) {
     return distance < pr ? { x: ix - ir, y: iy - ir } : getPosition(ir);
   };
 
-  switch (type) {
+  switch (type) { 
     case "banana":
       fruitClasses.push(classes.Banana);
       break;
