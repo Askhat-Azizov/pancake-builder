@@ -18,5 +18,8 @@ export default function ({ fruit, addFruit, removeFruit }) {
     />
   ));
 
-  return <div className={classes.FruitsControls}>{controlsOutput}</div>;
-}
+  return (
+    <div className={classes.FruitsControls}>{controlsOutput}
+     <button>Order</button>
+    </div>
+)}

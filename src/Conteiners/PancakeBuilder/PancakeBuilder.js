@@ -33,6 +33,9 @@ export default function () {
       const newFruit = { ...fruit };
       newFruit[type]--;
       setfruit(newFruit);
+
+      const newPrice = price - PRICES[type];
+      setPrice(newPrice);
     }
   }
 

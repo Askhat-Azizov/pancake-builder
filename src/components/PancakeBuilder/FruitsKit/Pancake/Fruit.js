@@ -6,7 +6,7 @@ export default function ({ type }) {
 
   let style = null;
   const getPosition = (ir) => {
-    const pd = 550;
+    const pd = 450;
     const pr = pd / 2;
 
     const ix = Math.round(Math.random() * pd);
