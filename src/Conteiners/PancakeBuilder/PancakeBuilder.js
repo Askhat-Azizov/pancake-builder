@@ -29,6 +29,18 @@ export default function () {
     }, 0);
     setOrder(total > 0);
   } 
+  
+  function startOrder() {
+    setIsOrdering(true);
+  }
+
+  function cancelOrder() {
+    setIsOrdering(false);
+  }
+
+  function finishOrder() {
+    alert("You are on the checkout page!");
+  }
 
   function addFruit(type) {
     const newFruit = { ...fruits };
@@ -56,12 +68,13 @@ export default function () {
     <div className={classes.PancakeBuilder}>
       <FruitsKit price={price} fruits={fruits} />
       <FruitsControls
+        startOrder={startOrder}
         order={!order}
         addFruit={addFruit}
         removeFruit={removeFruit}
         fruits={fruits}
       />
-      <Modal>
+      <Modal show={isOrdering}>
         <OrderSumarry fruits={fruits} />
       </Modal>
     </div>

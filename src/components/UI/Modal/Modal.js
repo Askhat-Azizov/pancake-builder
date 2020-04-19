@@ -1,10 +1,13 @@
-import React from 'react';
-import classes from './Modal.module.css';
+import React from "react";
+import classes from "./Modal.module.css";
 
-export default function({ children }) {
-    return(
-        <div className={classes.Modal}>
-            {children}
-        </div>
-    )
-};
+export default function ({ children, show }) {
+  const modalClasses = [classes.Modal];
+  if (show) {
+    modalClasses.push(classes.show);
+  }
+
+  return (
+    <div className={modalClasses.join(" ")}>{children}</div>
+  );
+}
