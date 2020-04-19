@@ -4,12 +4,12 @@
 }
 .Sidebar img {
   margin: 5px;
-  padding-bottom: 15px;
-  height: 60px;
-  width: 60px;
+  padding-bottom: 20px;
+  height: 70px;
+  width: 70px;
 }
 .Sidebar span {
   font-family: 'Pacifico', cursive;
   color: white;
-  font-size: 2rem;
+  font-size: 2.3rem;
 }

@@ -1,11 +1,17 @@
 .FruitControl{
     margin-bottom: 0.5rem;
+    padding: 12px;
 }
 .FruitControl .label{
-    color: wheat;
+    color:#67371C;
 }
 .FruitControl button {
     border: 1px solid greenyellow;
-    background: rgb(48, 87, 10);
-    color: wheat;
+    color: #6FCFB8;
+    font-weight: bold;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    padding: 5pxpx;
+    border-radius: 100%;
 }

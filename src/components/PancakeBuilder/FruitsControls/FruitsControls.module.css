@@ -1,7 +1,8 @@
 .FruitsControls{
     display: flex;
-    border: 3px solid red;
-    background-color: darkcyan;
+    border: 3px solid rgb(55, 153, 130);
+    background-color: #6FCFB8;
+    color: white;
     width: 300px;
     height: 300px   ;
 

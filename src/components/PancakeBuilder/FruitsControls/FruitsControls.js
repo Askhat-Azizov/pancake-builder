@@ -12,6 +12,7 @@ const CONTROLS = [
 export default function ({ startOrder, order, fruits, addFruit, removeFruit }) {
   const controlsOutput = CONTROLS.map((control) => (
     <FruitControl
+      key={control.type}
       control={control}
       addFruit={addFruit}
       removeFruit={removeFruit}
