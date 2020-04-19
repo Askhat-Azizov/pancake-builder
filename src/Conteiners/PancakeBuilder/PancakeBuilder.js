@@ -79,6 +79,7 @@ export default function () {
           fruits={fruits}
           cancelOrder={cancelOrder}
           finishOrder={finishOrder}
+          price={price}
         />
       </Modal>
     </div>
