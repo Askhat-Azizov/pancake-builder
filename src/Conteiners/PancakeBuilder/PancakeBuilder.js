@@ -74,7 +74,7 @@ export default function () {
         removeFruit={removeFruit}
         fruits={fruits}
       />
-      <Modal show={isOrdering}>
+      <Modal show={isOrdering} hideCallback={cancelOrder}>
         <OrderSumarry fruits={fruits} />
       </Modal>
     </div>

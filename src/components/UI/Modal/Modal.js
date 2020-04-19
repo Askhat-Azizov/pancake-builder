@@ -1,13 +1,17 @@
 import React from "react";
 import classes from "./Modal.module.css";
+import Backdrop from "../Backdrop/Backdrop";
 
-export default function ({ children, show }) {
+export default function ({ children, show, hideCallback }) {
   const modalClasses = [classes.Modal];
   if (show) {
     modalClasses.push(classes.show);
   }
 
   return (
-    <div className={modalClasses.join(" ")}>{children}</div>
+    <>
+      <Backdrop show={show} hideCallback={hideCallback} />
+      <div className={modalClasses.join(" ")}>{children}</div>
+    </>
   );
 }
