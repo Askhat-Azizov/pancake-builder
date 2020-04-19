@@ -38,10 +38,6 @@ export default function () {
     setIsOrdering(false);
   }
 
-  function finishOrder() {
-    alert("You are on the checkout page!");
-  }
-
   function addFruit(type) {
     const newFruit = { ...fruits };
     newFruit[type]++;

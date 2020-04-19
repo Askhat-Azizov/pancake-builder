@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./OrderSummary.module.css";
+import Button from "../../UI/Button/Button";
 
 const LABELS = {
     banana:"Banana",
@@ -20,9 +21,10 @@ export default function ({ fruits }) {
     <div className={classes.orderSummary}>
       <h2>to eat</h2>
       <p>and you will eat it ???</p>
-      <ul>
-        {fruitsOutput}
-      </ul>
+      <ul>{fruitsOutput}</ul>
+      <p>Would you like to checkout?</p>
+      <Button>Checkout</Button>
+      <Button>Cancel</Button>
     </div>
   );
 }
