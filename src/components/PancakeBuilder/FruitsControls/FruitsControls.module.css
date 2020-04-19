@@ -9,3 +9,17 @@
     flex-flow: column nowrap;
     align-items: center;
 }
+.order{
+    border: none;
+    background-color: white;
+    color: #EC6F31;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Pacifico', cursive;
+}
+.order:disabled{
+    opacity: .5;
+}
+.order:not(:disabled):hover{
+    opacity: .8;
+}

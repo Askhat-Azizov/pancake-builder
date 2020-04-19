@@ -10,7 +10,7 @@ const PRICES = {
 };
 
 export default function () {
-  const [fruit, setfruit] = useState({
+  const [fruits, setfruits] = useState({
     banana: 0,
     strawberry: 0,
     kiwi: 0,
@@ -18,21 +18,31 @@ export default function () {
   });
 
   const [price, setPrice] = useState(40);
+  const [order, setOrder] = useState(false);
+
+  function checkMakeOrder(fruits) {
+    const total = Object.keys(fruits).reduce((total, fruit) => {
+      return total + fruits[fruit]
+    }, 0);
+    setOrder(total > 0);
+  } 
 
   function addFruit(type) {
-    const newFruit = { ...fruit };
+    const newFruit = { ...fruits };
     newFruit[type]++;
-    setfruit(newFruit);
+    setfruits(newFruit);
+    checkMakeOrder(newFruit);
 
     const newPrice = price + PRICES[type];
     setPrice(newPrice);
   }
 
   function removeFruit(type) {
-    if (fruit[type] >= 1) {
-      const newFruit = { ...fruit };
+    if (fruits[type] >= 1) {
+      const newFruit = { ...fruits };
       newFruit[type]--;
-      setfruit(newFruit);
+      setfruits(newFruit);
+      checkMakeOrder(newFruit);
 
       const newPrice = price - PRICES[type];
       setPrice(newPrice);
@@ -41,11 +51,12 @@ export default function () {
 
   return (
     <div className={classes.PancakeBuilder}>
-      <FruitsKit price={price} fruit={fruit} />
+      <FruitsKit price={price} fruits={fruits} />
       <FruitsControls
+        order={!order}
         addFruit={addFruit}
         removeFruit={removeFruit}
-        fruit={fruit}
+        fruits={fruits}
       />
     </div>
   );

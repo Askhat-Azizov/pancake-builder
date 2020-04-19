@@ -8,18 +8,18 @@ const CONTROLS = [
   { label: "Chocolate", type: "chocolate" },
 ];
 
-export default function ({ fruit, addFruit, removeFruit }) {
+export default function ({ order, fruits, addFruit, removeFruit }) {
   const controlsOutput = CONTROLS.map((control) => (
     <FruitControl
       control={control}
       addFruit={addFruit}
       removeFruit={removeFruit}
-      disabled={fruit[control.type] === 0}
+      disabled={fruits[control.type] === 0}
     />
   ));
 
   return (
     <div className={classes.FruitsControls}>{controlsOutput}
-     <button>Order</button>
+     <button disabled={order} className={classes.order}>Order</button>
     </div>
 )}
