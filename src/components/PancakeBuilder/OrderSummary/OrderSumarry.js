@@ -4,12 +4,12 @@ import Button from "../../UI/Button/Button";
 
 const LABELS = {
     banana:"Banana",
-    strowberry:"Strowberry",
+    strawberry:"Strawberry",
     kiwi:"Kiwi",
     chocolate:"Chocolate"
 };
 
-export default function ({ fruits }) {
+export default function ({ fruits, cancelOrder, finishOrder }) {
   const fruitsOutput = Object.keys(fruits)
     .filter((fruit) => fruits[fruit] > 0)
     .map((fruit) => (
@@ -23,8 +23,8 @@ export default function ({ fruits }) {
       <p>and you will eat it ???</p>
       <ul>{fruitsOutput}</ul>
       <p>Would you like to checkout?</p>
-      <Button>Checkout</Button>
-      <Button>Cancel</Button>
+      <Button green click={finishOrder}>Checkout</Button>
+      <Button red click={cancelOrder}>Cancel</Button>
     </div>
   );
 }

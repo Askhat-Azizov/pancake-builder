@@ -13,3 +13,11 @@
 .Button:not(:disabled):hover{
     opacity: .8;
 }
+.red{
+    background-color: rgb(214, 67, 67);
+    color: white;
+}
+.green{
+    background-color: rgb(12, 173, 12);
+    color: white;
+}

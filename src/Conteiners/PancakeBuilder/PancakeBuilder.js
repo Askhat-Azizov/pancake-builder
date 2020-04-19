@@ -25,17 +25,21 @@ export default function () {
 
   function checkMakeOrder(fruits) {
     const total = Object.keys(fruits).reduce((total, fruit) => {
-      return total + fruits[fruit]
+      return total + fruits[fruit];
     }, 0);
     setOrder(total > 0);
-  } 
-  
+  }
+
   function startOrder() {
     setIsOrdering(true);
   }
 
   function cancelOrder() {
     setIsOrdering(false);
+  }
+
+  function finishOrder() {
+    alert("You are on the checkout page");
   }
 
   function addFruit(type) {
@@ -71,7 +75,11 @@ export default function () {
         fruits={fruits}
       />
       <Modal show={isOrdering} hideCallback={cancelOrder}>
-        <OrderSumarry fruits={fruits} />
+        <OrderSumarry
+          fruits={fruits}
+          cancelOrder={cancelOrder}
+          finishOrder={finishOrder}
+        />
       </Modal>
     </div>
   );
