@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import classes from "./PancakeBuilder.module.css";
 import FruitsKit from "../../components/PancakeBuilder/FruitsKit/FruitsKit";
 import FruitsControls from "../../components/PancakeBuilder/FruitsControls/FruitsControls";
+import Modal from "../../components/UI/Modal/Modal";
+import OrderSumarry from "../../components/PancakeBuilder/OrderSummary/OrderSumarry";
 const PRICES = {
   banana: 5,
   strawberry: 5,
@@ -19,6 +21,7 @@ export default function () {
 
   const [price, setPrice] = useState(40);
   const [order, setOrder] = useState(false);
+  const [isOrdering, setIsOrdering] = useState(false);
 
   function checkMakeOrder(fruits) {
     const total = Object.keys(fruits).reduce((total, fruit) => {
@@ -58,6 +61,9 @@ export default function () {
         removeFruit={removeFruit}
         fruits={fruits}
       />
+      <Modal>
+        <OrderSumarry fruits={fruits} />
+      </Modal>
     </div>
   );
 }
