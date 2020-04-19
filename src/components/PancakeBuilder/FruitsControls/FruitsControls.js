@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./FruitsControls.module.css";
 import FruitControl from "./FruitControl/FruitControl";
+import Button from "../../UI/Button/Button";
 const CONTROLS = [
   { label: "Banana", type: "banana" },
   { label: "Strawberry", type: "strawberry" },
@@ -21,9 +22,9 @@ export default function ({ startOrder, order, fruits, addFruit, removeFruit }) {
   return (
     <div className={classes.FruitsControls}>
       {controlsOutput}
-      <button onClick={startOrder} disabled={order} className={classes.order}>
+      <Button click={startOrder} enabled={!order}>
         Order
-      </button>
+      </Button>
     </div>
   );
 }

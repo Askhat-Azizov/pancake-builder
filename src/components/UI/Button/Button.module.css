@@ -1,0 +1,15 @@
+.Button{
+    border: none;
+    background-color: white;
+    color: #EC6F31;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Pacifico', cursive;
+    text-transform: uppercase;
+}
+.Button:disabled{
+    opacity: .5;
+}
+.Button:not(:disabled):hover{
+    opacity: .8;
+}
