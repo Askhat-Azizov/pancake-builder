@@ -1,6 +1,16 @@
 .Toolbar {
-    display: flex;
-    justify-content: space-between;
-  
-    background-color: #25A0FD;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #25a0fd;
+  width: 100%;
+}
+
+.Toolbar nav {
+  display: none;
+}
+@media (min-width: 670px) {
+  .Toolbar nav {
+    display: block;
   }
+}
