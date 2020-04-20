@@ -1,11 +1,13 @@
-import React from 'react';
-import classes from './Toolbar.module.css';
-import Nav from './Nav/Nav';
-import Sidebar from '../Sidebar/Sidebar';
+import React from "react";
+import classes from "./Toolbar.module.css";
+import Sidebar from "../Sidebar/Sidebar";
+import Navigation from "./Navigation/Navigation";
 
-export default () =>  (
+export default () => (
   <div className={classes.Toolbar}>
     <Sidebar />
-    <Nav />
+    <nav>
+      <Navigation />
+    </nav>
   </div>
 );
