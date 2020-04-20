@@ -19,10 +19,10 @@ export default function ({ fruits, cancelOrder, finishOrder, price }) {
     ));
   return (
     <div className={classes.orderSummary}>
-      <h2>To eat</h2>
-      <p>and you will eat it ???</p>
+      <h2>Your order</h2>
+      <p>Bon appetit!</p>
       <ul>{fruitsOutput}</ul>
-      <p>Nu ty i zhadnyy zhadnyy: {price}som</p>
+      <p>Total price: {price}som</p>
       <p>Would you like to checkout?</p>
       <Button green click={finishOrder}>
         Checkout
