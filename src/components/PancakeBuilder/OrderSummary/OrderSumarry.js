@@ -7,6 +7,8 @@ const LABELS = {
   strawberry: "Strawberry",
   kiwi: "Kiwi",
   chocolate: "Chocolate",
+  raspberry:"Raspberry",
+  mango:"Mango"
 };
 
 export default function ({ fruits, cancelOrder, finishOrder, price }) {
@@ -18,7 +20,7 @@ export default function ({ fruits, cancelOrder, finishOrder, price }) {
       </li>
     ));
   return (
-    <div className={classes.orderSummary}>
+    <div className={classes.OrderSummary}>
       <h2>Your order</h2>
       <p>Bon appetit!</p>
       <ul>{fruitsOutput}</ul>

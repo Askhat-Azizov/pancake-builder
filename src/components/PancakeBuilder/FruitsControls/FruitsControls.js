@@ -7,6 +7,8 @@ const CONTROLS = [
   { label: "Strawberry", type: "strawberry" },
   { label: "Kiwi", type: "kiwi" },
   { label: "Chocolate", type: "chocolate" },
+  {label: "Raspberry", type:"raspberry"},
+  {label: "Mango", type:"mango"},
 ];
 
 export default function ({ startOrder, order, fruits, addFruit, removeFruit }) {

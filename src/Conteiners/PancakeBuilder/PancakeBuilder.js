@@ -9,6 +9,8 @@ const PRICES = {
   strawberry: 5,
   kiwi: 8,
   chocolate: 10,
+  raspberry:5,
+  mango:8,
 };
 
 export default function () {
@@ -17,6 +19,8 @@ export default function () {
     strawberry: 0,
     kiwi: 0,
     chocolate: 0,
+    raspberry:0,
+    mango:0,
   });
 
   const [price, setPrice] = useState(40);

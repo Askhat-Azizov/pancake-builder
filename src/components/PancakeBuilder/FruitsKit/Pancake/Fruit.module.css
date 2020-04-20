@@ -2,7 +2,6 @@
    position: absolute;
    top: 0px;
    left: 0px;
-   border-radius: 50%;
    
    background-repeat: no-repeat;
 }
@@ -10,19 +9,34 @@
    background-image: url(../../../../assets/Banana.jpg);
    width: 58px;
    height: 54px;
+   border-radius: 50%;
 }
 .Strawberry{
   background-image: url(../../../../assets/Strawberry.jpg);
   width: 62px;
   height: 50px;
+  border-radius: 50%;
 }
 .Kiwi{
    background-image: url(../../../../assets/Kiwi.jpg);
    width: 50px;
    height: 52px;
+   border-radius: 50%;
 }
 .Chocolate {
    background-image: url(../../../../assets/Сhocolate.jpg);
    width: 50px;
    height: 24px;
+   border-radius: 50%;
+}
+.Raspberry{
+   background-image: url(../../../../assets/Raspberry.jpg);
+   width: 60px;
+   height: 50px;
+   border-radius: 50%;
+}
+.Mango{
+   background-image: url(../../../../assets/Mango.jpg);
+   width: 50px;
+   height: 50px;
 }

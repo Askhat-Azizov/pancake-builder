@@ -31,6 +31,12 @@ export default function ({ type }) {
     case "chocolate":
       fruitClasses.push(classes.Chocolate);
       break;
+    case "raspberry":
+      fruitClasses.push(classes.Raspberry);
+      break;
+    case "mango":
+        fruitClasses.push(classes.Mango);
+        break;  
   }
 
    const position = getPosition(50 / 2);

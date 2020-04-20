@@ -5,6 +5,7 @@
     color: white;
     width: 300px;
     height: 300px   ;
+    font-family: 'Pacifico', cursive;
 
     display: flex;
     flex-flow: column nowrap;
