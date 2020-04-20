@@ -1,0 +1,30 @@
+.NavigationItem a {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    height: 80px;
+  
+    box-sizing: border-box;
+   
+    text-decoration: none;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    font-size: 16px;
+    border-top: 5px solid transparent;
+   
+    transition: all .3s ease-in-out;
+  }
+  .NavigationItem a:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 2555, 0.3);
+  }
+  .NavigationItem .active {
+      border-color: white;
+      background-color: rgba(255, 255, 2555, 0.1);
+    }
+    @media (max-width: 670px) {
+      .NavigationItem a{
+          border: none;
+          border-left:5px solid transparent;
+      }
+  }

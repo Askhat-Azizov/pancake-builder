@@ -1,8 +1,10 @@
-import React from 'react';
-import classes from './Navigation.module.css';
+import React from "react";
+import classes from "./Navigation.module.css";
+import NavigationItem from "./NavigationItem/NavigationItem";
 
-export default ({ children, url }) => (
-    <li>
-     <a href="url" >{children}</a>
-    </li>
+export default () => (
+  <ul className={classes.Navigation}>
+    <NavigationItem url="/" active>Shawarma Builder</NavigationItem>
+    <NavigationItem url="/checkout">Checkout</NavigationItem>
+  </ul>
 );
