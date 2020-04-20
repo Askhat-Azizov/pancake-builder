@@ -6,8 +6,9 @@ import Navigation from "./Navigation/Navigation";
 export default () => (
   <div className={classes.Toolbar}>
     <Sidebar />
-    <nav>
-      <Navigation />
-    </nav>
+    <ul>
+      <Navigation>Pancake-builder</Navigation>
+      <Navigation>Checkout</Navigation>
+    </ul>
   </div>
 );
