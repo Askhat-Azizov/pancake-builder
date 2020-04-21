@@ -3,6 +3,8 @@
 }
 .FruitControl .label{
     color:#67371C;
+    font-size: 20px;
+    padding: 20px;
 }
 .FruitControl button {
     border: 1px solid greenyellow;
