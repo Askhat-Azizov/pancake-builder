@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Layout from './components/Layout/Layout';
+import Layout from './Conteiners/Layout/Layout';
 import PancakeBuilder from './Conteiners/PancakeBuilder/PancakeBuilder';
 
 function App() {
