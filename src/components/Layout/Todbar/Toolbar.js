@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "./Toolbar.module.css";
-import Sidebar from "../Sidebar/Sidebar";
+import Logo from "../Logo/Logo";
 import Navigation from "./Navigation/Navigation";
 
 export default ({ url }) => (
   <div className={classes.Toolbar}>
-    <Sidebar />
+    <Logo />
     <nav>
       <Navigation />
     </nav>
