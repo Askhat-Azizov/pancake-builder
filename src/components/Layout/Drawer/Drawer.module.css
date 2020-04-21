@@ -1,8 +1,8 @@
 .Drawer .content {
-  width: 250px;
+  width: 320px;
   background-color: #25a0fd;
   position: fixed;
-  z-index: 250;
+  z-index: 200;
   top: 0;
   left: 0;
   height: 100%;
@@ -15,7 +15,7 @@
 }
 
 .Close {
-  transform: translateX(-300px);
+  transform: translateX(-320px);
 }
 
 @media (min-width: 640px) {

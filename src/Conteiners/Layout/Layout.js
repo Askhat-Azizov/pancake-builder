@@ -12,7 +12,7 @@ export default function ({ children }) {
 
   return (
     <div className={classes.Layout}>
-      <Toolbar />
+      <Toolbar toggleDrawer={toggleDrawer}/>
       <Drawer open={drawerOpen} toggleDrawer={toggleDrawer} />
       {children}
     </div>
