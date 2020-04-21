@@ -1,0 +1,26 @@
+.Drawer .content {
+  width: 250px;
+  background-color: #25a0fd;
+  position: fixed;
+  z-index: 250;
+  top: 0;
+  left: 0;
+  height: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  transition: transform .3s ease-in;
+}
+
+.Open {
+  transform: translateX(0);
+}
+
+.Close {
+  transform: translateX(-300px);
+}
+
+@media (min-width: 640px) {
+  .Drawer  {
+    display: none;
+  }
+
+}
