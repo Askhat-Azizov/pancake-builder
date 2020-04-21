@@ -3,7 +3,7 @@ import logo from "../../../assets/logo.svg";
 import classes from "./Logo.module.css";
 
 export default () => (
-  <div className={classes.Sidebar}>
+  <div className={classes.Logo}>
     <img src={logo} />
     <span>Pancake Builder</span>
   </div>

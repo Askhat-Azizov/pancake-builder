@@ -1,14 +1,14 @@
-.Sidebar {
+.Logo {
   display: flex;
   align-items: center;
 }
-.Sidebar img {
+.Logo img {
   margin: 5px;
   padding-bottom: 20px;
   height: 70px;
   width: 70px;
 }
-.Sidebar span {
+.Logo span {
   font-family: 'Pacifico', cursive;
   color: white;
   font-size: 2.3rem;
