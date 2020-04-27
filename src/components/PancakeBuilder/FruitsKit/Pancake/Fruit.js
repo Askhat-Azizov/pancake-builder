@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import classes from "./Fruit.module.css";
 
-export default function ({ type }) {
+export default memo( function ({ type }) {
   const fruitClasses = [classes.Fruit, classes[type]];
 
   let style = null;
@@ -48,4 +48,4 @@ export default function ({ type }) {
   };
 
   return <div  style={style} className={fruitClasses.join(" ")}></div>;
-}
+});
