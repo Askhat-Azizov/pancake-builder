@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Toolbar from "../../components/Layout/Todbar/Toolbar";
+import Toolbar from "../../components/Layout/Toolbar/Toolbar";
 import classes from "./Layout.module.css";
 import Drawer from "../../components/Layout/Drawer/Drawer";
 

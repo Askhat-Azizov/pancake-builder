@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Drawer.module.css";
 import Logo from "../../UI/Logo/Logo";
-import Navigation from "../Todbar/Navigation/Navigation";
+import Navigation from "../Toolbar/Navigation/Navigation";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
 export default ({ toggleDrawer, open }) => {

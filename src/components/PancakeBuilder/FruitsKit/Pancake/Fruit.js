@@ -6,7 +6,7 @@ export default memo( function ({ type }) {
 
   let style = null;
   const getPosition = (ir) => {
-    const pd = 450;
+    const pd = 440;
     const pr = pd / 2;
 
     const ix = Math.round(Math.random() * pd);

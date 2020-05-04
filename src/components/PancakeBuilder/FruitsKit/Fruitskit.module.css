@@ -3,12 +3,11 @@
     padding: 1rem;
     position: relative;
     
-    background:#C78040;
-    border: 5px solid #D8B98E;
+    background-image: url(../../../assets/pancake.jpg);
    
     margin:  auto;
     width: 450px;
-    height: 450px;
+    height: 444px;
     margin: 8px;
     align-items: center;
     display: flex;
