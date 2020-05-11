@@ -33,7 +33,7 @@ export default withErrorHandler(() => {
     }
   
     function startOrder() {
-      setIsOrdering(true);
+      setIsOrdering(false);
     }
   
     function cancelOrder() {
