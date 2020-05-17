@@ -8,7 +8,8 @@ const LABELS = {
   kiwi: "Kiwi",
   chocolate: "Chocolate",
   raspberry:"Raspberry",
-  mango:"Mango"
+  mango:"Mango",
+  whippedcream:"Whippedcream"
 };
 
 export default function ({ fruits, cancelOrder, finishOrder, price }) {

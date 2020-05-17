@@ -9,6 +9,7 @@ const CONTROLS = [
   { label: "Chocolate", type: "chocolate" },
   {label: "Raspberry", type:"raspberry"},
   {label: "Mango", type:"mango"},
+  {label: "Whippedcream", type:"whippedcream"},
 ];
 
 export default function ({ startOrder, order, fruits, addFruit, removeFruit }) {

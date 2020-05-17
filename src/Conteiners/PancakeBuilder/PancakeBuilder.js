@@ -16,6 +16,7 @@ const PRICES = {
   chocolate: 10,
   raspberry:5,
   mango:8,
+  whippedcream:0,
 };
 
 export default withErrorHandler(() => {
