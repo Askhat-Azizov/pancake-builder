@@ -5,7 +5,7 @@
     margin: 0 10px;
     flex-direction: row;
   }
-  @media (max-width: 640px) {
+  @media (max-width: 650px) {
       .Navigation{
           margin: 10px 0;
           flex-direction: column;

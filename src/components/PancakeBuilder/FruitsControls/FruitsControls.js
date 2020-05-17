@@ -25,7 +25,7 @@ export default function ({ startOrder, order, fruits, addFruit, removeFruit }) {
   return (
     <div className={classes.FruitsControls}>
       {controlsOutput}
-      <Button click={startOrder} enabled={!order}>
+      <Button click={startOrder} enabled={order}>
         Order
       </Button>
     </div>

@@ -3,7 +3,7 @@ import Modal from "../../components/UI/Modal/Modal";
 
 const withErrorHandler = (WrappedComponent, axios) => {
   return (props) => {
-    const [error, setError] = useState(null);
+    const [error, setError] = useState("0");
 
     function hideModal() {
       setError(false);
@@ -15,7 +15,10 @@ const withErrorHandler = (WrappedComponent, axios) => {
     });
     const responseInterceptor = axios.interceptors.response.use(
       (response) => response,
-      (error) => setError(error)
+      (error) => {
+         setError(error);
+         return Promise.reject(error);
+      }
     );
 
     useEffect(() => {
@@ -23,7 +26,8 @@ const withErrorHandler = (WrappedComponent, axios) => {
         axios.interceptors.request.eject(requestInterceptor);
         axios.interceptors.response.eject(responseInterceptor);
       };
-    }, []);
+    }, [requestInterceptor, responseInterceptor]);
+
 
     return (
       <>
