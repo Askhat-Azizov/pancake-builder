@@ -57,7 +57,7 @@ export default withErrorHandler(() => {
   return (
     <div className={classes.Checkout}>
       <CheckoutSummary
-        ingredients={ingredients}
+        fruits={fruits}
         price={price}
         checkoutCancel={checkoutCancel}
         checkoutContinue={checkoutContinue}
