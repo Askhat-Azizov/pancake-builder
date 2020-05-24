@@ -34,12 +34,9 @@ export default memo( function ({ type }) {
     case "raspberry":
       fruitClasses.push(classes.Raspberry);
       break;
-    case "mango":
-        fruitClasses.push(classes.Mango);
-        break; 
-    case "whippedcream":
-        fruitClasses.push(classes.Whippedcream);
-        break;       
+    case "watermelon":
+        fruitClasses.push(classes.Watermelon);
+        break;      
   }
 
    const position = getPosition(50 / 2);
