@@ -3,3 +3,6 @@
     flex-flow: column nowrap;
     align-items: center;
 }
+.Checkout button{
+    border-radius: 10px;
+}

@@ -2,3 +2,7 @@
   font-family: "Pacifico", cursive;
   color:#67371C;
 }
+.OrderSummary button{
+  border-radius: 10px;
+  margin-left: 5px;
+}

@@ -7,7 +7,7 @@
     padding: 20px;
 }
 .FruitControl button {
-    border: 1px solid greenyellow;
+    border: 1px solid #12A2D7;
     color: #6FCFB8;
     font-weight: bold;
     font-size: 15px;
@@ -15,4 +15,7 @@
     height: 30px;
     padding: 5pxpx;
     border-radius: 100%;
+}
+.FruitControl .less:disabled{
+    background-color: rgb(194, 182, 182);
 }
