@@ -14,7 +14,7 @@ export default function ({ children }) {
     <div className={classes.Layout}>
       <Toolbar toggleDrawer={toggleDrawer}/>
       <Drawer open={drawerOpen} toggleDrawer={toggleDrawer} />
-      {children}
+      <main>{children}</main>
     </div>
   );
 }

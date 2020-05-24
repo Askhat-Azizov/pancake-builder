@@ -1,121 +1,67 @@
-import React, { useState, useEffect} from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import classes from "./PancakeBuilder.module.css";
+import axios from "../../axios";
 import FruitsKit from "../../components/PancakeBuilder/FruitsKit/FruitsKit";
 import FruitsControls from "../../components/PancakeBuilder/FruitsControls/FruitsControls";
 import Modal from "../../components/UI/Modal/Modal";
-import OrderSumarry from "../../components/PancakeBuilder/OrderSummary/OrderSumarry"
+import OrderSumarry from "../../components/PancakeBuilder/OrderSummary/OrderSumarry";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
-import axios from "../../axios";
 import Spinner from "../../components/UI/Spinner/Spinner";
+import classes from "./PancakeBuilder.module.css";
+import { useSelector } from "react-redux";
 
-
-const PRICES = {
-  banana: 5,
-  strawberry: 5,
-  kiwi: 8,
-  chocolate: 10,
-  raspberry:5,
-  mango:8,
-  whippedcream:0,
-};
 
 export default withErrorHandler(() => {
-  const [fruits, setFruits] = useState(null)
-  const [price, setPrice] = useState(40);
-  const [order, setOrder] = useState(false);
+  const {fruits, price} = useSelector((state) => state);
   const [isOrdering, setIsOrdering] = useState(false);
-  const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-    function checkMakeOrder(fruits) {
-      const total = Object.keys(fruits).reduce((total, fruit) => {
-        return total + fruits[fruit];
-      }, 0);
-      setOrder(total > 0);
-    }
-  
-    function startOrder() {
-      setIsOrdering(true);
-    }
-  
-    function cancelOrder() {
-      setIsOrdering(false);
-    }
-  
-   
-    function finishOrder() {
-     const queryParams = [];
-     queryParams.push("price=" + price.toFixed(2))
+  const canOrder = Object.values(fruits).reduce((canOrder, number) => {
+    return !canOrder ? number > 0 : canOrder;
+  }, false);
+ 
+  /*
+  useEffect(() => {
+    axios
+      .get("/fruits.json")
+      .then((response) => setFruits(response.data))
+      .catch((error) => {});
+  }, []);
+  */
 
-     history.push({
-       pathname: "/checkout",
-       search: queryParams.join("&")
-     })
-    }
-  
-    function addFruit(type) {
-      const newFruit = { ...fruits };
-      newFruit[type]++;
-      setFruits(newFruit);
-      checkMakeOrder(newFruit);
-  
-      const newPrice = price + PRICES[type];
-      setPrice(newPrice);
-    }
-  
-    function removeFruit(type) {
-      if (fruits[type] >= 1) {
-        const newFruit = { ...fruits };
-        newFruit[type]--;
-        setFruits(newFruit);
-        checkMakeOrder(newFruit);
-  
-        const newPrice = price - PRICES[type];
-        setPrice(newPrice);
-      }
-    }
-    useEffect(() => {
-      axios
-        .get("/fruits.json")
-        .then((response) => setFruits(response.data))
-        .catch((error) => {});
-    }, []);
-  
-    let output = <Spinner />;
-    if (fruits) {
-      output = (
-        <>
-          <FruitsKit price={price} fruits={fruits} />
-          <FruitsControls
-            startOrder={startOrder}
-            order={order}
-            fruits={fruits}
-            addFruit={addFruit}
-            removeFruit={removeFruit}
-          />
-        </>
-      );
-    }
-  
-    let orderSumarry = <Spinner />;
-    if (isOrdering && !loading) {
-      orderSumarry = (
-        <OrderSumarry
+  let output = <Spinner />;
+  if (fruits) {
+    output = (
+      <>
+        <FruitsKit price={price} fruits={fruits} />
+        <FruitsControls
+          startOrder={() => setIsOrdering(true)}
+          canOrder={canOrder}
           fruits={fruits}
-          finishOrder={finishOrder}
-          cancelOrder={cancelOrder}
-          price={price}
         />
-      );
-    }
-  
-    return (
-      <div className={classes.PancakeBuilder}>
-        {output}
-        <Modal show={isOrdering} hideCallback={cancelOrder}>
-         {orderSumarry}
-        </Modal>
-      </div>
+      </>
     );
-  }, axios)
+  }
+
+  let orderSumarry = <Spinner />;
+  if (isOrdering) {
+    orderSumarry = (
+      <OrderSumarry
+        fruits={fruits}
+        finishOrder={() => history.push("/checkout")}
+        cancelOrder={() => setIsOrdering(false)}
+        price={price}
+      />
+    );
+  }
+
+  return (
+    <div className={classes.PancakeBuilder}>
+      <h1>Pancake Builder</h1>
+      {output}
+      <Modal show={isOrdering}  hideCallback={() => setIsOrdering(false)}>
+        {orderSumarry}
+      </Modal>
+    </div>
+  );
+}, axios);

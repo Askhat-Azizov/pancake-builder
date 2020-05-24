@@ -5,3 +5,11 @@ body{
     margin: 0;
     padding: 0;
 }
+h1 {
+    color: #E5D812;
+    font-family: "Pacifico", cursive;
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 0;
+  }

@@ -3,12 +3,10 @@ import classes from "./Order.module.css";
 
 const CONTROLS = {
   banana: "Banana",
-  strawberry: "Strawberry",
   kiwi: "Kiwi",
   chocolate: "Chocolate",
-  raspberry:"Raspberry",
-  mango:"Mango",
-  whippedcream:"Whippedcream"
+  raspberry: "Raspberry",
+  watermelon: "Watermelon",
 };
 
 export default ({ price, fruits, details }) => {
@@ -21,7 +19,7 @@ export default ({ price, fruits, details }) => {
   const detailsOutput = (
     <div className={classes.details}>
       {details
-        ? details.name + ", " + details.phone + ", " + details.address
+        ? details.name + "," + details.phone + "," + details.address
         : "No details available"}
     </div>
   );

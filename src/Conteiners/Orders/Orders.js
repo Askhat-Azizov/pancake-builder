@@ -19,12 +19,10 @@ export default withErrorHandler(() => {
 
   let ordersOutput = <Spinner />;
   if (orders !== null) {
-    console.log(orders);
     ordersOutput = Object.keys(orders).map((id) => (
       <Order key={id} {...orders[id]} />
     ));
   }
-
   return (
     <div className={classes.Orders}>
       <h1>Orders</h1>

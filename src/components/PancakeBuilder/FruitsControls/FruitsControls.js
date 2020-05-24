@@ -2,23 +2,20 @@ import React from "react";
 import classes from "./FruitsControls.module.css";
 import FruitControl from "./FruitControl/FruitControl";
 import Button from "../../UI/Button/Button";
+
 const CONTROLS = [
   { label: "Banana", type: "banana" },
-  { label: "Strawberry", type: "strawberry" },
   { label: "Kiwi", type: "kiwi" },
   { label: "Chocolate", type: "chocolate" },
   {label: "Raspberry", type:"raspberry"},
-  {label: "Mango", type:"mango"},
-  {label: "Whippedcream", type:"whippedcream"},
+  {label: "Watermelon", type:"watermelon"},
 ];
 
-export default function ({ startOrder, order, fruits, addFruit, removeFruit }) {
+export default function ({ startOrder, canOrder, fruits }) {
   const controlsOutput = CONTROLS.map((control) => (
     <FruitControl
       key={control.type}
       control={control}
-      addFruit={addFruit}
-      removeFruit={removeFruit}
       disabled={fruits[control.type] === 0}
     />
   ));
@@ -26,7 +23,7 @@ export default function ({ startOrder, order, fruits, addFruit, removeFruit }) {
   return (
     <div className={classes.FruitsControls}>
       {controlsOutput}
-      <Button click={startOrder} enabled={order}>
+      <Button click={startOrder} enabled={canOrder}>
         Order
       </Button>
     </div>

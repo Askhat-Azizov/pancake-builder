@@ -13,7 +13,7 @@ export default function ({ price, fruits }) {
   return (
     <div className={classes.Fruitskit}>
       <div className={classes.bento}>{fruitsOutput}</div>
-      <div className={classes.price}>Total price:{price} som</div>
+      <div className={classes.price}>Total price:{price.toFixed(2)} som</div>
     </div>
   );
 }
