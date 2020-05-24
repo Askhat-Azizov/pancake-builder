@@ -26,6 +26,7 @@ export default withErrorHandler(() => {
   const [order, setOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
     function checkMakeOrder(fruits) {
       const total = Object.keys(fruits).reduce((total, fruit) => {
@@ -44,25 +45,13 @@ export default withErrorHandler(() => {
   
    
     function finishOrder() {
-      const order = {
-        fruits: fruits,
-        price: price,
-        delivery: "Fast",
-        customer: {
-          name: "Bakyt",
-          phone: "0700700700",
-          address: {
-            street: "123 Gebze",
-            city: "Karakol",
-          },
-        },
-      };
-  
-      setLoading(true);
-      axios.post("/order.json", order).then((response) => {
-        setLoading(false);
-        setIsOrdering(false);
-      });
+     const queryParams = [];
+     queryParams.push("price=" + price.toFixed(2))
+
+     history.push({
+       pathname: "/checkout",
+       search: queryParams.join("&")
+     })
     }
   
     function addFruit(type) {

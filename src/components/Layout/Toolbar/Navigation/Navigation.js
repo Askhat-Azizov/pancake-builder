@@ -1,10 +1,10 @@
 import React from "react";
-import classes from "./Navigation.module.css";
 import NavigationItem from "./NavigationItem/NavigationItem";
+import classes from "./Navigation.module.css";
 
 export default () => (
   <ul className={classes.Navigation}>
-    <NavigationItem url="/" active>Pancake Builder</NavigationItem>
-    <NavigationItem url="/checkout">Checkout</NavigationItem>
+    <NavigationItem url="/builder">Pancake Builder</NavigationItem>
+    <NavigationItem url="/orders">Orders</NavigationItem>
   </ul>
 );
