@@ -1,13 +1,13 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import FruitsKit from "../../PancakeBuilder/FruitsKit/FruitsKit";
+import FruitsKit from "../../PancakeBuilder/FruitsKit/FruitsKit"
 import Button from "../../UI/Button/Button";
 import classes from "./CheckoutSummary.module.css";
 
-export default ({ price, ingredients, checkoutCancel, checkoutContinue }) => {
+export default ({ price, fruits, checkoutCancel, checkoutContinue }) => {
   return (
     <div className={classes.CheckoutSummary}>
-      <FruitsKit price={price} ingredients={ingredients} />
+      <FruitsKit price={price} fruits={fruits} />
 
       <Route path="/checkout" exact>
         <Button click={checkoutCancel} red>

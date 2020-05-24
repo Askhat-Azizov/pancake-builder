@@ -1,17 +1,30 @@
-import React from 'react';
-import './App.css';
-import Layout from './Conteiners/Layout/Layout';
-import PancakeBuilder from './Conteiners/PancakeBuilder/PancakeBuilder';
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import Layout from "./Conteiners/Layout/Layout";
+import PancakeBuilder from "./Conteiners/PancakeBuilder/PancakeBuilder";
+import Checkout from "./Conteiners/Checkout/Checkout";
+import Orders from  "./Conteiners/Orders/Orders";
+import "./App.css";
 
-function App() {
+export default () => {
   return (
     <div className="App">
       <Layout>
-         <PancakeBuilder/>
+        <Switch>
+          <Route path="/" exact>
+            <Redirect to="/builder" />
+          </Route>
+          <Route path="/builder">
+            <PancakeBuilder />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
+          </Route>
+          <Route path="/orders">
+            <Orders />
+          </Route>
+        </Switch>
       </Layout>
-      
     </div>
   );
-}
-
-export default App;
+};
