@@ -10,11 +10,16 @@ const CONTROLS = {
 };
 
 export default ({ price, fruits, details }) => {
-  const fruitsOutput = Object.keys(fruits).map((key) => (
+  let fruitsOutput = null;
+   if (fruits) {
+     fruitsOutput = Object.keys(fruits).map((key) => (
     <span key={key} className={classes.fruit}>
       {CONTROLS[key]} ({fruits[key]})
     </span>
   ));
+   }
+
+  
 
   const detailsOutput = (
     <div className={classes.details}>
@@ -27,7 +32,8 @@ export default ({ price, fruits, details }) => {
   return (
     <div className={classes.Order}>
       {detailsOutput}
-      <div className={classes.price}>{price.toFixed(2)} som</div>
+      <div className={classes.price}>
+        {price ? price.toFixed(2) : 0} som</div>
       <div className={classes.fruits}>{fruitsOutput}</div>
     </div>
   );

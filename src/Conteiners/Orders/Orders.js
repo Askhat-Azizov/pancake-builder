@@ -10,7 +10,7 @@ export default withErrorHandler(() => {
 
   useEffect(() => {
     axios
-      .get("/orders.json")
+      .get("/order.json")
       .then((response) => {
         setOrders(response.data);
       })
