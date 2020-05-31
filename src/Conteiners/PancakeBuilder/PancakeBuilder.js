@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "../../axios";
+import { useSelector, useDispatch } from "react-redux";
+import { load } from "../../store/actions/builder";
 import FruitsKit from "../../components/PancakeBuilder/FruitsKit/FruitsKit";
 import FruitsControls from "../../components/PancakeBuilder/FruitsControls/FruitsControls";
 import Modal from "../../components/UI/Modal/Modal";
@@ -8,8 +10,6 @@ import OrderSumarry from "../../components/PancakeBuilder/OrderSummary/OrderSuma
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import classes from "./PancakeBuilder.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { load } from "../../store/actions/builder";
 
 
 export default withErrorHandler(() => {
