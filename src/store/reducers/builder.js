@@ -1,13 +1,7 @@
 import * as types from "../actions/types";
 
 const initialState = {
-  fruits: {
-    banana: { quantity: 0, price: 5.2, label: "Banana"},
-    kiwi: { quantity: 0, price: 8.5, label: "Kiwi"},
-    chocolate: { quantity: 0, price: 10.3, label: "Chocolate"},
-    raspberry: { quantity: 0, price: 5.2, label: "Raspberry"},
-    watermelon: { quantity: 0, price: 9.5, label: "Watermelon"},
-  },
+  fruits: null,
   price: 40,
 };
 
@@ -37,6 +31,12 @@ export default (state = initialState, action) => {
           },
         },
         price: state.price -state.fruits[action.fruit].price,
+      };
+
+      case types.SET_FRUITS:
+      return {
+        ...state,
+        fruits: action.fruits,
       };
 
     default:
