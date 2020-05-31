@@ -5,9 +5,9 @@ import Fruit from "./Pancake/Fruit";
 export default function ({ price, fruits }) {
   let fruitsOutput = [];
 
-  Object.keys(fruits).forEach((type) => {
-    for (let i = 0; i < fruits[type]; i++) {
-      fruitsOutput.push(<Fruit key={type + i} type={type} />);
+  Object.keys(fruits).forEach((fruit) => {
+    for (let i = 0; i < fruits[fruit].quantity; i++) {
+      fruitsOutput.push(<Fruit key={fruit + i} type={fruit} />);
     }
   });
   return (

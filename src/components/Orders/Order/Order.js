@@ -1,26 +1,18 @@
 import React from "react";
 import classes from "./Order.module.css";
 
-const CONTROLS = {
-  banana: "Banana",
-  kiwi: "Kiwi",
-  chocolate: "Chocolate",
-  raspberry: "Raspberry",
-  watermelon: "Watermelon",
-};
-
 export default ({ price, fruits, details }) => {
   let fruitsOutput = null;
    if (fruits) {
-     fruitsOutput = Object.keys(fruits).map((key) => (
-    <span key={key} className={classes.fruit}>
-      {CONTROLS[key]} ({fruits[key]})
+     fruitsOutput = Object.keys(fruits)
+     .filter((fruit) => fruits[fruit].quantity > 0)
+     .map((fruit) => (
+    <span key={fruit} className={classes.fruit}>
+      {fruits[fruit].label} ({fruits[fruit].quantity})
     </span>
   ));
    }
-
-  
-
+   
   const detailsOutput = (
     <div className={classes.details}>
       {details

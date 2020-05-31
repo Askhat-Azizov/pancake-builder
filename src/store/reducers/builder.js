@@ -2,22 +2,15 @@ import * as types from "../actions/types";
 
 const initialState = {
   fruits: {
-    banana: 0,
-    kiwi: 0,
-    chocolate: 0,
-    raspberry: 0,
-    watermelon: 0,
+    banana: { quantity: 0, price: 5.2, label: "Banana"},
+    kiwi: { quantity: 0, price: 8.5, label: "Kiwi"},
+    chocolate: { quantity: 0, price: 10.3, label: "Chocolate"},
+    raspberry: { quantity: 0, price: 5.2, label: "Raspberry"},
+    watermelon: { quantity: 0, price: 9.5, label: "Watermelon"},
   },
   price: 40,
 };
 
-const PRICES = {
-    banana: 5.2,
-    kiwi: 8.5,
-    chocolate: 10.3,
-    raspberry: 5.2,
-    watermelon: 8.5,
-  };
 export default (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_FRUIT:
@@ -25,9 +18,12 @@ export default (state = initialState, action) => {
         ...state,
         fruits: {
           ...state.fruits,
-          [action.fruit]: state.fruits[action.fruit] + 1,
+          [action.fruit]: { 
+          ...state.fruits[action.fruit],
+          quantity: state.fruits[action.fruit].quantity + 1,
         },
-        price: state.price + PRICES[action.fruit],
+        },
+        price: state.price + state.fruits[action.fruit].price,
       };
 
     case types.REMOVE_FRUIT:
@@ -35,9 +31,12 @@ export default (state = initialState, action) => {
         ...state,
         fruits: {
           ...state.fruits,
-          [action.fruit]: state.fruits[action.fruit] - 1,
+          [action.fruit]: { 
+            ...state.fruits[action.fruit],
+            quantity: state.fruits[action.fruit].quantity - 1,
+          },
         },
-        price: state.price - PRICES[action.fruit],
+        price: state.price -state.fruits[action.fruit].price,
       };
 
     default:

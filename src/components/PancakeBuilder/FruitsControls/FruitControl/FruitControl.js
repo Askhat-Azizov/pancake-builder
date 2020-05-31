@@ -4,22 +4,22 @@ import { remove, add } from '../../../../store/actions/builder';
 import classes from "./FruitControl.module.css";
 
 
-export default ({ control, disabled }) => {
+export default ({ label, fruit, disabled }) => {
   const dispatch = useDispatch();
 
   return (
     <div className={classes.FruitControl}>
       <button
         className={classes.less}
-        onClick={() => remove(dispatch, control.type)}
+        onClick={() => remove(dispatch, fruit)}
         disabled={disabled}
       >
         -
       </button>
-      <span className={classes.label}>{control.label}</span>
+      <span className={classes.label}>{label}</span>
       <button
         className={classes.more}
-        onClick={() => add(dispatch, control.type)}
+        onClick={() => add(dispatch, fruit)}
       >
         +
       </button>
