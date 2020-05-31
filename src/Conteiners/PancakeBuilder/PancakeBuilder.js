@@ -13,7 +13,7 @@ import classes from "./PancakeBuilder.module.css";
 
 
 export default withErrorHandler(() => {
-  const {fruits, price} = useSelector((state) => state);
+  const { fruits, price } = useSelector(state => state.builder);
   const [isOrdering, setIsOrdering] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();

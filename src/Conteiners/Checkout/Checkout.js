@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, useLocation, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory, Route, Redirect } from "react-router-dom";
 import axios from "../../axios";
 import CheckoutSummary from "../../components/Checkout/CheckoutSummary/CheckoutSummary";
 import classes from "./Checkout.module.css";
@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 export default withErrorHandler(() => {
   const history = useHistory();
-  const { fruits, price } = useSelector((state) => state);
+  const { fruits, price } = useSelector(state => state.builder);
   const [loading, setLoading] = useState(false);
 
 
@@ -41,14 +41,21 @@ export default withErrorHandler(() => {
     formOutput = <CheckoutForm checkoutFinish={checkoutFinish} />;
   }
 
-  return (
-    <div className={classes.Checkout}>
+  let summaryOutput = <Redirect to="/" />
+  if (fruits) {
+    summaryOutput = (
       <CheckoutSummary
         fruits={fruits}
         price={price}
         checkoutCancel={checkoutCancel}
         checkoutContinue={checkoutContinue}
       />
+    )
+  }
+
+  return (
+    <div className={classes.Checkout}>
+      {summaryOutput}
       <Route path="/checkout/form">{formOutput}</Route>
     </div>
   );
