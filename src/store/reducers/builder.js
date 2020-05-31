@@ -1,4 +1,4 @@
-import * as actions from "./actions";
+import * as types from "../actions/types";
 
 const initialState = {
   fruits: {
@@ -20,7 +20,7 @@ const PRICES = {
   };
 export default (state = initialState, action) => {
   switch (action.type) {
-    case actions.ADD_FRUIT:
+    case types.ADD_FRUIT:
       return {
         ...state,
         fruits: {
@@ -30,7 +30,7 @@ export default (state = initialState, action) => {
         price: state.price + PRICES[action.fruit],
       };
 
-    case actions.REMOVE_FRUIT:
+    case types.REMOVE_FRUIT:
       return {
         ...state,
         fruits: {

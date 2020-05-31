@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from "react-redux";
-import { REMOVE_FRUIT, ADD_FRUIT } from "../../../../store/actions";
+import { REMOVE_FRUIT, ADD_FRUIT } from "../../../../store/actions/types";
 import classes from "./FruitControl.module.css";
 
 
