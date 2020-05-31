@@ -2,16 +2,13 @@ import React from "react";
 import classes from "./Order.module.css";
 
 export default ({ price, fruits, details }) => {
-  let fruitsOutput = null;
-   if (fruits) {
-     fruitsOutput = Object.keys(fruits)
-     .filter((fruit) => fruits[fruit].quantity > 0)
-     .map((fruit) => (
+  const fruitsOutput = Object.keys(fruits)
+  .filter(fruit => fruits[fruit].quantity > 0)
+  .map(fruit => (
     <span key={fruit} className={classes.fruit}>
       {fruits[fruit].label} ({fruits[fruit].quantity})
     </span>
   ));
-   }
    
   const detailsOutput = (
     <div className={classes.details}>
