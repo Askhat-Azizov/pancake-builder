@@ -8,6 +8,6 @@ export const set = (dispatch, orders) =>
 
 export const load = (dispatch) =>
   axios
-    .get("/orders.json")
+    .get("/order.json")
     .then(({ data }) => set(dispatch, data))
     .catch(() => {});
