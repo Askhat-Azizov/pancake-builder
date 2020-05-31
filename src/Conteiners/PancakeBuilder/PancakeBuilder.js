@@ -7,12 +7,12 @@ import FruitsKit from "../../components/PancakeBuilder/FruitsKit/FruitsKit";
 import FruitsControls from "../../components/PancakeBuilder/FruitsControls/FruitsControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSumarry from "../../components/PancakeBuilder/OrderSummary/OrderSumarry";
-import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
+import withAxios from "../../hoc/withAxios/withAxios";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import classes from "./PancakeBuilder.module.css";
 
 
-export default withErrorHandler(() => {
+export default withAxios(() => {
   const { fruits, price } = useSelector(state => state.builder);
   const [isOrdering, setIsOrdering] = useState(false);
   const history = useHistory();
