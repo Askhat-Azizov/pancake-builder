@@ -4,12 +4,20 @@
 body{
     margin: 0;
     padding: 0;
+}  
+h1{
+  font-size: 4rem;
 }
-h1 {
+h2 {
+  font-size: 3.5rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h1, h2, h3 {
     color: #FFFF00;
     font-family: "Pacifico", cursive;
     width: 100%;
     text-align: center;
-    font-size: 4rem;
     margin-top: 0;
   }
