@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from "react-redux";
-import { REMOVE_FRUIT, ADD_FRUIT } from "../../../../store/actions/types";
+import { remove, add } from '../../../../store/actions/builder';
 import classes from "./FruitControl.module.css";
 
 
@@ -11,9 +11,7 @@ export default ({ control, disabled }) => {
     <div className={classes.FruitControl}>
       <button
         className={classes.less}
-        onClick={() =>
-          dispatch({ type: REMOVE_FRUIT, fruit: control.type })
-        }
+        onClick={() => remove(dispatch, control.type)}
         disabled={disabled}
       >
         -
@@ -21,9 +19,7 @@ export default ({ control, disabled }) => {
       <span className={classes.label}>{control.label}</span>
       <button
         className={classes.more}
-        onClick={() =>
-          dispatch({ type: ADD_FRUIT, fruit: control.type })
-        }
+        onClick={() => add(dispatch, control.type)}
       >
         +
       </button>
