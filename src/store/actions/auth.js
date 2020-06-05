@@ -13,7 +13,10 @@ export const fail = (dispatch, error) => dispatch({
   type: AUTH_FAIL, error
 });
 
-export const auth = (dispatch, email, password) => axios
-  .post("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCrBVuS3c00Psb7p7nBDahUoC0g1zqV43A", { email, password })
+const key = "AIzaSyCrBVuS3c00Psb7p7nBDahUoC0g1zqV43A";
+const signInUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + key;
+const signUpUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + key;
+export const auth = (dispatch, method, email, password) => axios
+  .post(method === "signin" ? signInUrl : signUpUrl, { email, password })
   .then(({ data }) => success(dispatch, data))
-  .catch(error => fail(dispatch, error)); 
+  .catch(error => fail(dispatch, error));
