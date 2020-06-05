@@ -6,5 +6,6 @@ export default () => (
   <ul className={classes.Navigation}>
     <NavigationItem url="/builder">Pancake Builder</NavigationItem>
     <NavigationItem url="/orders">Orders</NavigationItem>
+    <NavigationItem url="/auth">Authenticate</NavigationItem>
   </ul>
 );
