@@ -14,6 +14,7 @@ import classes from "./PancakeBuilder.module.css";
 
 export default withAxios(() => {
   const { fruits, price } = useSelector(state => state.builder);
+  const isAuthenticated = useSelector(state => state.auth.token !== null);
   const [isOrdering, setIsOrdering] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
@@ -21,6 +22,15 @@ export default withAxios(() => {
   useEffect(() => {
      load(dispatch);
   }, [dispatch]);
+
+  function startOrder() {
+    if (isAuthenticated) {
+      setIsOrdering(true);
+    }
+    else {
+      history.push('/auth?checkout');
+    }
+  }
 
   let output = <Spinner />;
   if (fruits) {
@@ -33,7 +43,7 @@ export default withAxios(() => {
       <>
         <FruitsKit price={price} fruits={fruits} />
         <FruitsControls
-          startOrder={() => setIsOrdering(true)}
+          startOrder={startOrder}
           canOrder={canOrder}
           fruits={fruits}
         />
