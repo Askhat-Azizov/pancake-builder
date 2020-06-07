@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 export default withAxios(({ loading }) => {
   const history = useHistory();
   const { fruits, price } = useSelector(state => state.builder);
-  const { token } = useSelector(state => state.auth);
+  const { token, id } = useSelector(state => state.auth);
 
 
   function checkoutCancel() {
@@ -28,6 +28,7 @@ export default withAxios(({ loading }) => {
         fruits,
         price,
         details: data,
+        userId: id
     })
       .then(() => history.replace("/"));
   }
