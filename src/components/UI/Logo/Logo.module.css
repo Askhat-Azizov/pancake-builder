@@ -1,15 +1,18 @@
 .Logo {
   display: flex;
   align-items: center;
+  height: 70px;
+  min-width: 465px;
 }
 .Logo img {
-  margin: 5px;
-  padding-bottom: 20px;
-  height: 70px;
-  width: 70px;
+  height: 125px;
+  width: 120px;
+  margin-bottom: 10px;
+  margin-right: -25px;
 }
 .Logo span {
   font-family: 'Pacifico', cursive;
   color: white;
   font-size: 2.1rem;
+  width: 100%;
 }
