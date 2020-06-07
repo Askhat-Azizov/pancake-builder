@@ -8,7 +8,7 @@ export default () => {
 
   return (
     <ul className={classes.Navigation}>
-      <NavigationItem url="/builder">Sushi Builder</NavigationItem>
+      <NavigationItem url="/builder">Pancake Builder</NavigationItem>
       {isAuthenticated ? <NavigationItem url="/orders">Orders</NavigationItem> : null}
       {!isAuthenticated ? <NavigationItem url="/auth">Authenticate</NavigationItem> : null}
       {isAuthenticated ? <NavigationItem url="/logout">Logout</NavigationItem> : null}

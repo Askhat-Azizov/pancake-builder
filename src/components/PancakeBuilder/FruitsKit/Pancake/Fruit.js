@@ -19,8 +19,8 @@ export default memo( function ({ type }) {
   };
 
   switch (type) { 
-    case "banana":
-      fruitClasses.push(classes.Banana);
+    case "peach":
+      fruitClasses.push(classes.Peach);
       break;
     case "strawberry":
       fruitClasses.push(classes.Strawberry);
@@ -33,6 +33,9 @@ export default memo( function ({ type }) {
       break;
     case "raspberry":
       fruitClasses.push(classes.Raspberry);
+    break;
+    case "starwberry":
+        fruitClasses.push(classes.Strawberry);
       break;
     case "watermelon":
         fruitClasses.push(classes.Watermelon);

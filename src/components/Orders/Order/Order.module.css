@@ -13,12 +13,12 @@
   .Order .price {
     font-weight: bold;
     font-size: 2rem;
-    color: #E5D812;
+    color: #FFA401;
     font-family: 'Pacifico', cursive;
     margin-bottom: 0.5em;
   }
   .Order .fruits {
-    border: 1px solid #E5D812;
+    border: 1px solid #FFA401;
     border-radius: 0.3em;
     padding: 0.3em;
     display: inline-block;

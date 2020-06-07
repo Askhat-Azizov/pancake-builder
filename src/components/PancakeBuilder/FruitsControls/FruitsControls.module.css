@@ -1,9 +1,9 @@
 .FruitsControls{
     display: flex;
-    background-color: #FFFF00;
+    background-color: #FFA401;
     color: white;
     width: 300px;
-    height: 290px ;
+    height: 350px ;
     border-radius: 10%;
     padding:10px 10px;
     font-family: 'Pacifico', cursive;
@@ -18,7 +18,8 @@
     margin-bottom: 5px;
 }
 .FruitsControls button:hover{
-    background-color:#67371C;
+    background-color:#FFA401;
+    border: 1px solid white;
     color: white;
     transform: scaleY(1);
     transition: 3s;

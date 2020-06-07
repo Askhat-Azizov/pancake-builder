@@ -5,34 +5,36 @@
    
    background-repeat: no-repeat;
 }
-.Banana{
-   background-image: url(../../../../assets/Banana.jpg);
-   width: 49px;
+.Peach{
+   background-image: url(../../../../assets/peach.svg);
+   width: 50px;
    height: 50px;
-   border-radius: 100%;
 }
 .Kiwi{
-   background-image: url(../../../../assets/Kiwi2.jpg);
+   background-image: url(../../../../assets/kiwi2.svg);
    width: 42px;
    height: 43px;
    border-radius: 50%;
 }
 .Chocolate {
-   background-image: url(../../../../assets/Сhocolate.jpg);
-   width: 48px;
-   height: 22px;
-   border-radius: 100%;
+   background-image: url(../../../../assets/chocolate2.svg);
+   width: 50px;
+   height: 50px;
+
 }
 .Raspberry{
-   background-image: url(../../../../assets/Raspberry.jpg);
+   background-image: url(../../../../assets/raspberry2.png);
    width: 50px;
    height: 50px;
    border-radius: 100%;
 }
+.Strawberry{
+   background-image: url(../../../../assets/strawberry2.svg);
+   width: 50px;
+   height: 50px;
+}
 .Watermelon{
-   background-image: url(../../../../assets/Mango.jpg);
-   width: 49px;
-   height: 23px;
-   border-bottom-left-radius: 500px;
-   border-bottom-right-radius: 500px;
+   background-image: url(../../../../assets/watermelon2.svg);
+   width: 50px;
+   height: 50px;
 }
