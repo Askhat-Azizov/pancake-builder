@@ -14,3 +14,9 @@
     display: block;
   }
 }
+
+@media (max-width: 531px) {
+  .Toolbar{
+      min-width: 531px;
+  }
+}
